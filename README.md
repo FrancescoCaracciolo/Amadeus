@@ -34,4 +34,18 @@ While training usually gives the best results, it has a lot of cost/efficiency d
 - Training is expensive, so generally **models** trained for this **are small**, resulting in **worse performance compared to big models with good prompts**
 - LLMs still advance pretty quickly, so trained models might get outdated after a couple of months.
 
+### TTS
+For TTS, you can choose to use a generic TTS, or a TTS obtained using voice cloning of Kurisu's voice actor.
+
+In case you choose to use a generic TTS, it is suggested to use "Kokoro TTS" (locally run, open source and very fast even on CPU and well supported on Nyarch Assistant with amazing sound quality), or Edge TTS (closed, online only but fast and good quality).
+
+Other options are using [ElevenLabs](https://elevenlabs.io/) (one of the highest quality TTS, closed and payment only), and [Deepgram](https://deepgram.com/) (nice quality, closed, but with 200$ free credit on registration, use it with this [extension](https://github.com/FrancescoCaracciolo/NewelleExtensions/blob/main/extensions/deepgram.py)).
+
+#### Voice Cloning 
+
+For voice cloning there are three possible approaches:
+1. Fine-tune a voice cloning model 
+2. Use a one-shot voice cloning model 
+3. Use a generic TTS + RVC voice conversion to make it sound like Kurisu 
+
 

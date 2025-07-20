@@ -5,7 +5,7 @@ from .handlers import PromptDescription
 DIVERGENCE_PROMPT = """
 - You can get the current worldline divergence number using 
 
-```divergence 
+```divergence
 current 
 ```
 
