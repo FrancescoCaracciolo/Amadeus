@@ -1,10 +1,24 @@
 # Amadeus
 
-This repository contains resources, files and information on how to configure [Nyarch Assistant](https://github.com/NyarchLinux/NyarchAssistant) to behave like Kurisu Makise from Steins;Gate.
+This repository contains resources on creating **Amadeus**, the digial copy of **Kurisu Makise** from Steins;Gate. 
 
-Some of these resources **can also be used with other programs**.
+Specifically, there are information on how to configure [Nyarch Assistant](https://github.com/NyarchLinux/NyarchAssistant) to behave like Kurisu Makise and tailor it to your needs.
+
+Here is a demo of the expected result, but based on your preferences, you can easily use the existing technologies to customize it to your needs.
+
+[Video Here]
 
 If you want to contribute to this project, please feel free to submit issues and pull requests.
+
+#### Index
+- [Directories](#directories)
+- [Nyarch Assistant tutorial]()
+- [LLM](#llm)
+- [Prompting]()
+- [Memory and Knowledge]()
+- [TTS]()
+- [Avatar]()
+- [Additional Tools]()
 
 #### Directories
 - `Dialogues`: Files contaning Kurisu's lines in the VNs and some context, useful for memory 
@@ -12,17 +26,47 @@ If you want to contribute to this project, please feel free to submit issues and
 - `Prompts`: System prompts in order to make LLMs talk like Kurisu/Amadeus 
 - `Voices`: Please **make responsible use of this folder**. Audio files from Kurisu Makise VA. `file.mp3` contains the audio, `file.mp3.txt` contains its transcription. `Voices/README.md` contains more links 
     - `OneShot`: Contains audios for One Shot voice cloning
-#### Index
-- [Nyarch Assistant tutorial]()
-- [LLM]()
-- [Prompting]()
-- [Memory and Knowledge]()
-- [TTS]()
-- [Avatar]()
-- [Additional Tools]()
 
-# Configuration Tutorial
 
+# Nyarch Assistant tutorial
+In this section you can find a quick tutorial on how to configure Nyarch Assistant to achieve similar results to those in the video.
+
+#### 1. Install Nyarch Assistant
+Nyarch Assistant can be installed on **any linux distribution using Flatpak**.
+Plese note that alternative packaging formats are not supported yet, so just use flatpak.
+Once you have your linux distro setup, installation is pretty easy:
+1. Install flatpak and flathub, following [this for your distribution](https://flathub.org/setup)
+2. Install Nyarch Assistant, following [this section of Nyarch Assistant readme](https://github.com/NyarchLinux/NyarchAssistant?tab=readme-ov-file#installation)
+
+#### 2. Start Nyarch Assistant
+Using your application launcher start Nyarch Assistant. In case you don't have one, you can start it using the command `flatpak run moe.nyarchlinux.assistant`.
+
+This is what it should look like on startup:
+
+<img width="1670" height="949" alt="Screenshot From 2025-07-19 15-52-40" src="https://github.com/user-attachments/assets/0cb7faf1-d2e6-448b-bbaa-e6098a994bc8" />
+
+#### 3. Create a new profile
+I suggest you to start creating a new profile. Profiles have their own settings, in that way you can always go back to defaults. You can use this feature also to have multiple version of this configuration for multiple use cases. (You have plenty of options so you probably will)
+
+<img width="1430" height="827" alt="Screenshot From 2025-07-19 16-01-50" src="https://github.com/user-attachments/assets/42eb4e3a-d897-478d-bd32-554d7fa6e4d4" />
+
+
+<img width="1430" height="827" alt="Screenshot From 2025-07-19 16-03-31" src="https://github.com/user-attachments/assets/a19cb311-3afa-48fb-84e2-4ed987df59cb" />
+
+As you can see, she is really happy for her profile name.
+
+#### 4. Choose an LLM
+You can choose to use basically any LLM. Any OpenAI compatible model is supported, in addition to Ollama, Gemini, Claude and others. Also, if you want you can set a custom command to run the LLM or make your own extension to add it.
+
+In the demo, `deepseek/deepseek-chat-v3-0324:free` from OpenRouter is used. It is available for free for 50 req/day on OpenRouter, but you can use **whathever model you prefer**, Nyarch Assistant has a lot of providers to choose from, **including local ones**.
+
+To make an informed choice about what model to pick, read the [LLM](#llm) section.
+
+<img width="1440" height="822" alt="Screenshot From 2025-07-19 16-04-26" src="https://github.com/user-attachments/assets/ab293b8d-8202-49af-a35e-e68db5705feb" />
+
+
+
+# General Configuration
 ### LLM
 #### Models
 In order to make an LLM to behave like Kurisu, there are two possible apporaches:
