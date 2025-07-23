@@ -1,4 +1,4 @@
-# Amadeus
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/39227c1e-b733-4d0a-a67d-57f2cd641489" /># Amadeus
 
 This repository contains resources on creating **Amadeus**, the digial copy of **Kurisu Makise** from Steins;Gate. 
 
@@ -121,6 +121,61 @@ After that the extension will be enabled
 
 <img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/5e020e7c-31ee-4940-a7be-cf4dc7214597" />
 Now, we need to configure it.
+
+#### 7. Prompting 
+
+First of all, disable Smart Prompts. They dinamically add some information about Nyarch Linux in the prompt, but for our puprposes it can make outputs worst.
+
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/a4118f1c-2bfd-4b47-a493-983eb52367cc" />
+
+I also suggest you to keep off or edit the "helpful assistant" prompt. Kurisu is not very helpful and she doesn't like being called assistant.
+
+Now, let's edit the personality prompt with the prompt you prefer from the **Prompts folder**. In the demo, **"Kurisu_EN.txt"** is used.
+
+I strongly suggest you to have **prompt and expected LLM output in the same language**. You can ask another LLM to translate your prompts into your preferred langauge.
+
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/56d2dcdf-1baa-451c-878c-d8ff44ec1185" />
+
+You can also choose to translate or edit the other prompts based on your preferences.
+I also suggest you to add this prompt in the "Custom Prompt" section:
+```
+{COND:
+[tts_on] Give concise answers, what you say will be spoken out loud
+}
+```
+In this way, when TTS is enabled, the LLM will give short answers.
+
+You can find more about prompting in the [Newelle Wiki](https://github.com/qwersyk/Newelle/wiki/Prompt-variables).
+
+If you want, you can also specify the scenario and give your username putting the {USER} variable in the prompt. (You can set the username in the General settings).
+
+#### 8. Adding Kurisu's Knowledge
+In order to give the LLM the memory of Kurisu, we only extract relevant parts from the Steins;Gate Visual Novel script, and put them in the prompt.
+
+First of all, download the dialogue script [here](https://github.com/FrancescoCaracciolo/Amadeus/blob/main/Dialogues/SG_Dialogues_EN.md).
+
+1. Go in the settings, enable knowledge->document folder.
+2. Open your documents directory
+
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/81c0bc1b-d1c4-4901-8821-922a1b5fd06d" />
+
+3. Drop SG_Dialogues_EN.md in that folder
+<img width="1150" height="604" alt="image" src="https://github.com/user-attachments/assets/f8209473-ac54-4fed-a68f-932d2c97f679" />
+
+You can also drop there any other file you want as knowledge. If you want, you can also add [SG_Story_EN.md](), in order to give some synthetized knowledge.
+
+I also suggest you to put many limited-length chunks.
+
+Then index your documents (might take some seconds):
+
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/fac6bd6a-6a0a-4f8b-b1b5-67f3c0d57185" />
+
+When it's done, close the settings. Now some lines from the VN will be added to the prompt, for example:
+<img width="1532" height="781" alt="image" src="https://github.com/user-attachments/assets/a2d2b50b-ccdb-4859-bd26-2d4baa1d6b1a" />
+
+#### 9. Speech To Text
+For speech to text you can choose anything, it doesn't really change Kurisu's personality.
+I suggest to use locally run Whisper.CPP, and also add something like "The user is talking to Kurisu Makise" to the prompt in order to pick the right words. In the demo BASE (EN) Model has been used.
 
 ##### Endpoint
 First of all, the endpoint. It is where the TTS model is run. By default it runs on [this huggingface space](https://huggingface.co/spaces/XXXXRT/GPT-SoVITS-ProPlus), but it is very slow. I suggest to run it locally if you have a Nvidia GPU.
