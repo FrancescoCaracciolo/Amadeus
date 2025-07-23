@@ -64,6 +64,95 @@ To make an informed choice about what model to pick, read the [LLM](#llm) sectio
 
 <img width="1440" height="822" alt="Screenshot From 2025-07-19 16-04-26" src="https://github.com/user-attachments/assets/ab293b8d-8202-49af-a35e-e68db5705feb" />
 
+#### 5. Choose an Avatar
+For the avatar, there are three options supported and showed in the demo:
+##### 1. Live2D Avatar
+
+You can download the Live2D avatar [here]() and uncompress it.
+
+After that, go in the settings, go in the Avatar section and scroll down. Expand the Live2D option and click on the folder icon next to the model list:
+
+<img width="762" height="698" alt="Screenshot From 2025-07-21 14-38-51" src="https://github.com/user-attachments/assets/31a5869e-00c1-4fb2-9aea-ee833ef0a5ef" />
+
+Drop the model folder in the opened folder.
+<img width="954" height="632" alt="Screenshot From 2025-07-21 14-39-05" src="https://github.com/user-attachments/assets/d3d4bc41-2dc2-4b13-a9ca-a62e71c6c4f4" />
+
+After that refresh the list of models and pick the Amadeus model:
+
+<img width="762" height="698" alt="Screenshot From 2025-07-21 14-39-15" src="https://github.com/user-attachments/assets/d7011356-dd22-4e02-8f21-8032f16c6d91" />
+
+<img width="661" height="595" alt="Screenshot From 2025-07-21 14-40-33" src="https://github.com/user-attachments/assets/8e185e63-628a-4c33-884a-e1ecec790701" />
+
+And here you go. (You can drag the model with the mouse).
+
+<img width="1522" height="922" alt="Screenshot From 2025-07-21 14-41-43" src="https://github.com/user-attachments/assets/66fff0e5-811b-4371-ac15-cb1030c44345" />
+
+##### 2. LivePNG Avatar
+LivePNG is the visual novel style. 
+
+Go in the settings, go in the Avatar section and scroll down. Click on the download button
+
+<img width="762" height="698" alt="Screenshot From 2025-07-23 14-48-42" src="https://github.com/user-attachments/assets/80802877-ea6f-43a0-9c79-ad3d54723c41" />
+
+And it will download automatically Kurisu model.
+After that, select the model from the settings.
+
+##### 3. Live2D Desktop Pet
+This does only work on Gnome wayland and Hyprland at the moment. For installation refer to [this](https://github.com/NyarchLinux/DesktopPuppet).
+
+#### 6. TTS Configuration
+For more information about TTS choice read the TTS section.
+In the demo, the TTS used is locally run GPTSoVITS with one-shot voice cloning.
+For this, you have to install the [Newelle Voice Cloning extension](https://github.com/FrancescoCaracciolo/Newelle-Voice-Cloning).
+1. Downlaod the [cloning.py](https://github.com/FrancescoCaracciolo/Newelle-Voice-Cloning/blob/main/cloning.py) file in the repo
+2. Open the extensions menu in Nyarch Assistant
+<img width="1458" height="840" alt="Screenshot From 2025-07-21 14-42-16" src="https://github.com/user-attachments/assets/aa5c2431-819e-4d4f-89b7-a8e393d75e9f" />
+
+3. Click on Install extension from file
+5. Select the cloning.py file
+<img width="1012" height="672" alt="image" src="https://github.com/user-attachments/assets/2dda1c0f-81d5-4038-9944-0cd6dc14c7a1" />
+
+After that the extension will be enabled
+
+<img width="622" height="622" alt="image" src="https://github.com/user-attachments/assets/33e0d499-f514-4c68-a4d3-e46123984a32" />
+
+
+5. Open the settings, go to Avatar and then expand the Text To Speech section and scroll down to SoVITS 2, click on the install button next to it and select it.
+
+<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/5e020e7c-31ee-4940-a7be-cf4dc7214597" />
+Now, we need to configure it.
+
+##### Endpoint
+First of all, the endpoint. It is where the TTS model is run. By default it runs on [this huggingface space](https://huggingface.co/spaces/XXXXRT/GPT-SoVITS-ProPlus), but it is very slow. I suggest to run it locally if you have a Nvidia GPU.
+In order to host the space locally you can install docker on your system (Instructions for Arch, check installtion on your specific distro):
+```bash
+sudo pacman -S docker nvidia-container-toolkit
+sudo systemctl enable --now docker
+```
+And then run the container:
+```bash
+sudo docker run -it -p 7860:7860 --platform=linux/amd64 --gpus all \
+	registry.hf.space/francescocaracciolo-gpt-sovitsproplus:latest python inference_webui.py
+```
+If running locally, put in the endpoint: `http://localhost:7860`
+
+##### Reference voice
+Reference voice is the voice to clone. 
+I suggest you to use the audio in the same language of the output.
+You can find some audio files for one shot voice cloning the the [Voices/OneShot directory](https://github.com/FrancescoCaracciolo/Amadeus/tree/main/Voices/OneShot).
+
+After downloading the files, click on the icon folder next to the "Reference Audio" row, drop the files there, click the refresh button and select the audio you want.
+
+Then put the "reference prompt" text (transcription of the reference audio, you can find it in a txt file named like the audio file).
+Then select the input and output languages.
+
+The final configuration should look something like this:
+
+<img width="762" height="698" alt="Screenshot From 2025-07-23 15-19-54" src="https://github.com/user-attachments/assets/a9f4728e-5660-432c-a090-52d62f718887" />
+
+If you want the output of the LLM to be in a different language from the LLM, enable the translator:
+<img width="762" height="698" alt="Screenshot From 2025-07-23 15-33-10" src="https://github.com/user-attachments/assets/3e0e4a7d-baa1-4bc4-b0bd-d93f80c59554" />
+
 
 
 # General Configuration
