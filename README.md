@@ -24,15 +24,15 @@ If you want to contribute to this project, please feel free to submit issues and
 - <img alt="Digit 0" class="digit" src="https://divergence.nyarchlinux.moe/images/11.gif" width="5px" /> <img alt="Digit 0" class="digit" src="https://divergence.nyarchlinux.moe/images/12.gif" width="5px" /> **Access to World Divergence**: Let her check our current worldline divergence
 
 #### Index
-- [Planned Features]()
+- [Planned Features](#planned-features)
 - [Directories](#directories)
-- [Nyarch Assistant tutorial]()
+- [Nyarch Assistant tutorial](#nyarch-assistant-tutorial)
 - [LLM](#llm)
-- [Prompting]()
-- [Memory and Knowledge]()
-- [TTS]()
-- [Avatar]()
-- [Additional Tools]()
+- [Prompting](#prompting)
+- [Memory and Knowledge](#memory-and-knowledge)
+- [TTS](#tts)
+- [Avatar](#avatar)
+- [Additional Tools](#additional-tools)
 
 
 #### Directories
@@ -238,7 +238,7 @@ If you want the output of the LLM to be in a different language from the LLM, en
 #### Models
 In order to make an LLM to behave like Kurisu, there are two possible apporaches:
 1. Training/Fine Tuning a model specifically to be able to behave like Kurisu
-2. Using a general purpose model and specify its behavior via prompting (and some more advanced techniques explained in [Memory and Knowledge]())
+2. Using a general purpose model and specify its behavior via prompting (and some more advanced techniques explained in [Memory and Knowledge](#memory-and-knowledge))
 
 While training usually gives the best results, it has a lot of cost/efficiency downsides:
 - At the moment of writing (and I doubt in the future), there is no provider offering Amadeus models, meaning that **they must be run locally** or on **providers** that offer running custom models (that are generally much more **expensive**)
@@ -271,6 +271,35 @@ There is still no tutorial or model made for this. You can find a dataset for tr
 ##### TTS + Voice Conversion
 I have not written an extension to do this yet, but I plan it in the future.
 
+
+### Prompting
+In the Prompts folder you can find some prompts we have made for Kurisu and Amadeus personalities. You are invited to help us to improve that existing prompts and add new prompts.
+
+### Memory and Knowledge
+In this section we will divide the memory in three categories:
+1. Memory of interaction with the user 
+2. Memory of Kurisu Makise dialogues
+3. Knowledge about S;G and everything else
+
+#### User Interactions
+For long term memory on user interactions there are many techniques, at the moment in Nyarch Assistant there are two:
+1. User summary: just ask an LLM to make a summary about the conversation every X messages, and put it in the prompt
+2. Memoripy: saves old messages in a vector database, categorizes them and retrieves the more relevant messages. This is more similar to human memory as it also has memory decay of memories that are not called ofter, and memory boost for memories more asked
+
+But there are many other approaches.
+
+#### Kurisu Dialogues
+THe idea is simple: put the dialogues in a vector database, and pick the most semantically similar dialogues with the user query and put them in the prompt.
+This has two advantages:
+1. Give the LLM a good idea of Kurisu speaking style and ideas (like few-shot prompting)
+2. If similar conversations are found, the answer will also be similar
+
+#### Knowledge about S;G
+Having some parts of dialogues is not enough to have the big picture. A proper summary of the series gives a better idea of the story to the LLM.
+
+Of course, not the full summary is given, but only the relevant parts (using semantic search).
+
+
 ### Avatar 
 For avatar, Nyarch Assitant supports natively:
 - Live2D (usually used by VTubers)
@@ -285,9 +314,14 @@ In addition to that here are some extensions to introduce some tools specificall
 #### Divergence Meter
 The divergence meter allows the AI to check the divergence value from [https://divergence.nyarchlinux.moe](https://divergence.nyarchlinux.moe), that tries to estimate the divergence of the current worldline using world news. 
 
+<img width="1510" height="967" alt="Screenshot From 2025-07-24 15-05-37" src="https://github.com/user-attachments/assets/22241eaa-3737-4dec-9ed2-30d2d0695ce7" />
+
 
 #### Image Generation
 Generate Kurisu's images at every message using a custom Lora. You can use the Newelle image generation extension and load a custom Lora.
+
+<img width="1510" height="967" alt="Screenshot From 2025-07-24 15-29-26" src="https://github.com/user-attachments/assets/cb543cc9-f81a-4e8a-8b35-2f8f2a209c86" />
+
 
 For example, in the screenshot, [this setup](https://civitai.com/images/643458) is used, with this prompt:
 
