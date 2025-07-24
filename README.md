@@ -1,4 +1,4 @@
-<img width="762" height="698" alt="image" src="https://github.com/user-attachments/assets/39227c1e-b733-4d0a-a67d-57f2cd641489" /># Amadeus
+# Amadeus
 
 This repository contains resources on creating **Amadeus**, the digial copy of **Kurisu Makise** from Steins;Gate. 
 
@@ -10,7 +10,21 @@ Here is a demo of the expected result, but based on your preferences, you can ea
 
 If you want to contribute to this project, please feel free to submit issues and pull requests.
 
+#### Features
+
+- 🔄 **Modular**: Every AI component of Amadeus can be easily changed or replaced
+- 👤 **Avatar support**: Supports Live2D (VTuber style) and LivePNG(VN Style) avatars with emotions and motions 
+- 🎙 **Voice Recognition**: Speak to Kurisu directly
+- 🗣 **Voice Cloning**: Clone Kurisu's voice in seconds
+- 🧠 **Memory**: Access to Steins;Gate dialogues
+- 📱 **Assistant capabilities**: access to tools to actually behave like an assistant if you can educate her well
+- 🌎 **Translation**: Translate the output of the LLM before giving it to the TTS
+- 🧩 **Extensions**: Add tools, mini-apps or AI providers with minimal Python code
+- 🖼 **Image Generation**: Generate images of Kurisu at every message
+- <img alt="Digit 0" class="digit" src="https://divergence.nyarchlinux.moe/images/11.gif" width="5px" /> <img alt="Digit 0" class="digit" src="https://divergence.nyarchlinux.moe/images/12.gif" width="5px" /> **Access to World Divergence**: Let her check our current worldline divergence
+
 #### Index
+- [Planned Features]()
 - [Directories](#directories)
 - [Nyarch Assistant tutorial]()
 - [LLM](#llm)
@@ -20,6 +34,7 @@ If you want to contribute to this project, please feel free to submit issues and
 - [Avatar]()
 - [Additional Tools]()
 
+
 #### Directories
 - `Dialogues`: Files contaning Kurisu's lines in the VNs and some context, useful for memory 
 - `Extensions`: Newelle/Nyarch Assistant extensions that are made specifically per Kurisu/Amadeus 
@@ -27,6 +42,14 @@ If you want to contribute to this project, please feel free to submit issues and
 - `Voices`: Please **make responsible use of this folder**. Audio files from Kurisu Makise VA. `file.mp3` contains the audio, `file.mp3.txt` contains its transcription. `Voices/README.md` contains more links 
     - `OneShot`: Contains audios for One Shot voice cloning
 
+#### Planned Features
+- [ ] Realtime conversation
+- [ ] VRM Support
+- [ ] Improved Kurisu Memory
+- [ ] Voice cloning using TTS + RVC
+- [ ] Script from other VNs
+- [ ] Camera vision
+- [ ] TTS Model based on all Kurisu's audio in the VN
 
 # Nyarch Assistant tutorial
 In this section you can find a quick tutorial on how to configure Nyarch Assistant to achieve similar results to those in the video.
@@ -263,5 +286,20 @@ In addition to that here are some extensions to introduce some tools specificall
 The divergence meter allows the AI to check the divergence value from [https://divergence.nyarchlinux.moe](https://divergence.nyarchlinux.moe), that tries to estimate the divergence of the current worldline using world news. 
 
 
+#### Image Generation
+Generate Kurisu's images at every message using a custom Lora. You can use the Newelle image generation extension and load a custom Lora.
 
+For example, in the screenshot, [this setup](https://civitai.com/images/643458) is used, with this prompt:
+
+- To generate images use: 
+```generateimage
+prompt
+```
+Use detailed prompts, with english words separated by commas.
+
+At every message, generate an image of yourself in the pose you take during the conversation. 
+Describe only the environment and your pose, without describing your appearence.
+
+#### Calendar
+Manage your calendar with Kurisu.
 
