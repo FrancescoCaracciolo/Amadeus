@@ -245,6 +245,25 @@ While training usually gives the best results, it has a lot of cost/efficiency d
 - Training is expensive, so generally **models** trained for this **are small**, resulting in **worse performance compared to big models with good prompts**
 - LLMs still advance pretty quickly, so trained models might get outdated after a couple of months.
 
+There is already a model trained on Kurisu based on Llama 3.1 that is a preview, you can download it from [HuggingFace](https://huggingface.co/amadeusproject/amadeus-8b-base-preview). At the moment it is not supported on Nyarch Assistant but I plan to make an extension soon.
+
+For general purpose models, here are my suggestions:
+- For small models that are runnable locally: `qwen3` and `gemma3` models (and those based on them) are pretty good, choose the size based on your VRAM / RAM.
+- For big open weights models, I suggest `deepseek-v3-0528`, `kimi-k2` and `qwen3` models.
+- For closed models, `gemini` models are pretty cheap, `mistral` models are worth a try, `grok4` and `gpt-4o` are pretty good but expensive
+
+For reference benchmark, I suggest [this](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard).
+
+#### Providers
+If you want to run models locally, use Ollama. If you don't want to run them locally, there are many free APIs:
+- OpenRouter
+- Groq
+- Gemini
+
+You can find a good list [here](https://github.com/cheahjs/free-llm-api-resources).
+
+If you are willing to pay, I also suggest to use Openrouter.
+
 ### TTS
 For TTS, you can choose to use a generic TTS, or a TTS obtained using voice cloning of Kurisu's voice actor.
 
@@ -305,6 +324,11 @@ For avatar, Nyarch Assitant supports natively:
 - Live2D (usually used by VTubers)
 - LivePNG (Format made specifically for Newelle, VN Style)
 Both support expressions.
+
+You can download the Live2D model [here](https://nyarchlinux.moe/kurisu.tar.gz). It doesn't have motions or expressions, but they are supported by Nyarch Assistant.
+Also, I don't know the author of this model, if you know it open an issue.
+
+For LivePNG, you can find it [here](https://github.com/FrancescoCaracciolo/LivePNG).
 
 ### Additional tools 
 Nyarch Assistant has support for many tools, form code execution to web search. Also, Newelle extensions are fully supported.
