@@ -6,7 +6,7 @@ Specifically, there are information on how to configure [Nyarch Assistant](https
 
 Here is a demo of the expected result, but based on your preferences, you can easily use the existing technologies to customize it to your needs.
 
-[Video Here]
+[Video Here](https://youtu.be/uA29y_AL_Ek)
 
 If you want to contribute to this project, please feel free to submit issues and pull requests.
 
