@@ -288,6 +288,7 @@ In the demonstration, GPT-SoVITS is used.
 There is still no tutorial or model made for this. You can find a dataset for training in Japanese in the Voices folder.
 
 ##### TTS + Voice Conversion
+You can find Kurisu Makise's model I have trained on [huggingface](https://huggingface.co/FrancescoCaracciolo/Kurisu-RVC).
 I have not written an extension to do this yet, but I plan it in the future.
 
 
