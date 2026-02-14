@@ -245,7 +245,7 @@ While training usually gives the best results, it has a lot of cost/efficiency d
 - Training is expensive, so generally **models** trained for this **are small**, resulting in **worse performance compared to big models with good prompts**
 - LLMs still advance pretty quickly, so trained models might get outdated after a couple of months.
 
-There is already a model trained on Kurisu based on Llama 3.1 that is a preview, you can download it from [HuggingFace](https://huggingface.co/amadeusproject/amadeus-8b-base-preview). At the moment it is not supported on Nyarch Assistant but I plan to make an extension soon.
+There is already a model trained on Kurisu based on Llama 3.1 that is a preview, you can download it from [HuggingFace](https://huggingface.co/amadeusproject/amadeus-8b-base-preview).
 
 For general purpose models, here are my suggestions:
 - For small models that are runnable locally: `qwen3` and `gemma3` models (and those based on them) are pretty good, choose the size based on your VRAM / RAM.
