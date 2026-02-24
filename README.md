@@ -91,6 +91,7 @@ To make an informed choice about what model to pick, read the [LLM](#llm) sectio
 For the avatar, there are three options supported and showed in the demo:
 ##### 1. Live2D Avatar
 
+**New Live2D avatar**: [here](https://nyarchlinux.moe/Kurisu.zip)
 You can download the Live2D avatar [here](https://nyarchlinux.moe/kurisu.tar.gz) and uncompress it.
 
 After that, go in the settings, go in the Avatar section and scroll down. Expand the Live2D option and click on the folder icon next to the model list:
