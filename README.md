@@ -43,7 +43,7 @@ If you want to contribute to this project, please feel free to submit issues and
     - `OneShot`: Contains audios for One Shot voice cloning
 
 #### Planned Features
-- [ ] Realtime conversation
+- [x] Realtime conversation
 - [x] VRM Support
 - [ ] Improved Kurisu Memory
 - [ ] Voice cloning using TTS + RVC
