@@ -215,6 +215,8 @@ sudo docker run -it -p 7860:7860 --platform=linux/amd64 --gpus all \
 ```
 If running locally, put in the endpoint: `http://localhost:7860`
 
+#### TTS
+For TTS you can use this model made to mimic Kurisu's voice (not voice cloning): https://huggingface.co/Loke-60000/christina-TTS
 ##### Reference voice
 Reference voice is the voice to clone. 
 I suggest you to use the audio in the same language of the output.
