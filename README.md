@@ -45,7 +45,7 @@ If you want to contribute to this project, please feel free to submit issues and
 #### Planned Features
 - [x] Realtime conversation
 - [x] VRM Support
-- [ ] Improved Kurisu Memory
+- [ ] Improved Kurisu Memory (Ongoing)
 - [ ] Voice cloning using TTS + RVC
 - [ ] Script from other VNs
 - [ ] Camera vision
